@@ -8,6 +8,8 @@ import TestPart1 from './pages/TestPart1';
 import TestPart2 from './pages/TestPart2';
 import Result from './pages/Result';
 import ResultPage from './pages/ResultPage';
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 // MBTI type pages
 import INFP from "./pages/types/INFP";
 import ENFP from "./pages/types/ENFP";
@@ -43,6 +45,8 @@ function App() {
         <Route path="/result" element={<Result />} />
         <Route path="/results" element={<ResultPage />} />
         <Route path="/test2" element={<TestPart2 />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
 
         {/* MBTI type routes */}
         <Route path="/types/INFP" element={<INFP />} />
