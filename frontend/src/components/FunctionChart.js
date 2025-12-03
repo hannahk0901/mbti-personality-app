@@ -1,28 +1,22 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-export default function FunctionChart({ scores, title = "Cognitive Function Scores" }) {
+function FunctionChart({ scores }) {
   const labels = Object.keys(scores);
   const data = {
     labels,
     datasets: [
       {
-        label: "Score",
+        label: "Cognitive Function Scores",
         data: Object.values(scores),
-        backgroundColor: "rgba(75, 192, 192, 0.5)",
-        borderColor: "rgba(75, 192, 192, 1)",
-        borderWidth: 1,
+        backgroundColor: [
+          "#a18276", "#d9b8c4", "#cbb6a8", "#b28f7b",
+          "#a6a57a", "#bcb8b1", "#a99985", "#cab1a4"
+        ],
+        borderRadius: 6,
       },
     ],
   };
@@ -30,22 +24,20 @@ export default function FunctionChart({ scores, title = "Cognitive Function Scor
   const options = {
     responsive: true,
     plugins: {
-      title: {
-        display: true,
-        text: title,
-        font: { size: 20 },
-      },
-      legend: {
-        display: false,
-      },
+      legend: { display: false },
+      tooltip: { backgroundColor: "#fff8f3", titleColor: "#3e3e3e", bodyColor: "#3e3e3e" },
     },
     scales: {
-      y: {
-        beginAtZero: true,
-        max: Math.max(...Object.values(scores)) + 2,
-      },
+      y: { beginAtZero: true, ticks: { color: "#3e3e3e" } },
+      x: { ticks: { color: "#3e3e3e" } },
     },
   };
 
-  return <Bar data={data} options={options} />;
+  return (
+    <div style={{ maxWidth: "600px", margin: "2rem auto" }}>
+      <Bar data={data} options={options} />
+    </div>
+  );
 }
+
+export default FunctionChart;

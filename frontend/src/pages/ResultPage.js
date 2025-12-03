@@ -34,6 +34,8 @@ function ResultPage() {
       <h3>Group: {finalResult.group}</h3>
       <h3>Top 2 Functions: {finalResult.top2.join(" & ")}</h3>
       <h4>Function Stack: {finalResult.sortedGroup.join(" → ")}</h4>
+      <h2>📈 Visual Representation</h2>
+      <FunctionChart scores={finalResult.combinedScores} />
 
       <h2>Combined Scores:</h2>
       <ul>
