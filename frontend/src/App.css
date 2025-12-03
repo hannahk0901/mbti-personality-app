@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}

@@ -45,3 +45,10 @@
 .logout-btn:hover {
   background: #c0392b;
 }
+.navbar {
+  background-color: var(--primary);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}

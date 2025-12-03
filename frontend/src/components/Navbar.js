@@ -17,7 +17,7 @@ function Navbar() {
       <div className="navbar-title">MBTI Project</div>
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/test">Take the Test</Link>
+        <Link to="/test1">Take the Test</Link>
         <Link to="/functions">Cognitive Functions</Link>
         {username ? (
           <>
